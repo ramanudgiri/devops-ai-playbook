@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     const limitNum = parseInt(limit as string);
     const offset = (pageNum - 1) * limitNum;
 
-let whereClause = 'WHERE p.is_active = true';
+let whereClause = 'WHERE 1=1';
     const filterParams: any[] = [];
     let paramIndex = 1;
 
