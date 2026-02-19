@@ -335,12 +335,8 @@ Get the Grafana admin password:
 ```bash
 kubectl get secret kube-prometheus-stack-grafana -n monitoring -o jsonpath="{.data.admin-password}" | base64 --decode
 ```
-
-<<<<<<< HEAD
 - Username: `admin`
-=======
-- Username: `Admin`
->>>>>>> 8e1d9e7 (Updated the README file and package.json for local testing)
+
 
 ### ArgoCD
 
