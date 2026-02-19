@@ -230,18 +230,18 @@ alias k=kubectl
 
 ---
 
-## Step 4: Run CI/CD Pipeline
+## Step 4: Run CI Pipeline
 
-1. Navigate to your project demo pipeline in GitHub
+1. Navigate to your project demo branch in the repo
 2. Run the pipeline using the `project-demo` branch
 
 ---
 
 ## Step 5: Update Image Tags
 
-1. Go to any one ECR repository and copy the tag of one service ( tag is the commit ID )
+1. Go to any one ECR repository in the AWS account after the pipeline succeeds and copy the tag of any one image ( tag is the commit ID )
 2. Update the image tag in the deployment files:
-   - `gitops/k8s/backend/` - for all backend services
+   - `gitops/k8s/backend/` - for all backend services ( the account ID, region changes because right now the manifest file has my ID and region)
    - `gitops/k8s/frontend/` - for frontend service
 
 Paste the same tag in all service deployments.
