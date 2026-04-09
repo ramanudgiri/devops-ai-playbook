@@ -35,11 +35,14 @@ router.post('/', async (req, res) => {
 
     const order = result.rows[0];
 
+    const insertedItems: any[] = [];
     for (const item of orderItems) {
-      await query(`
+      const itemResult = await query(`
         INSERT INTO order_items (order_id, product_id, quantity, price)
         VALUES ($1, $2, $3, $4)
+        RETURNING id
       `, [order.id, item.product_id, item.quantity, item.price]);
+      insertedItems.push({ ...item, id: itemResult.rows[0].id });
     }
 
     const response: ServiceResponse<Order> = {
@@ -47,7 +50,9 @@ router.post('/', async (req, res) => {
       data: {
         id: order.id,
         userId: order.user_id,
-        items: orderItems.map(item => ({
+        items: insertedItems.map(item => ({
+          id: item.id,
+          orderId: order.id,
           productId: item.product_id,
           quantity: item.quantity,
           price: item.price
