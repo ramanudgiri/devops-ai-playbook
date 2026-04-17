@@ -53,7 +53,7 @@ This is where the full picture comes together — including how AI fits into the
 ---
 
 ### Part 3 — DevOps Project Implementation
-[`docs/part3-demo.md`](docs/part3-demo.md) · [`projects/README.md`](projects/README.md)
+[`projects/README.md`](projects/README.md)
 
 Then we actually build the project. You'll see:
 
@@ -67,7 +67,7 @@ Then we actually build the project. You'll see:
 ---
 
 ### Part 4 — AIOps Integration
-[`docs/part4-aiops.md`](docs/part4-aiops.md) · [`projects/aiops-assistant/README.md`](projects/aiops-assistant/README.md)
+[`projects/aiops-assistant/README.md`](projects/aiops-assistant/README.md)
 
 Finally, we explore how AI helps with:
 
