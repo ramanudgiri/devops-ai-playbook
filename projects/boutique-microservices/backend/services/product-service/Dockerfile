@@ -20,7 +20,8 @@ WORKDIR /app
 
 # Copy package files and install production dependencies only
 COPY package*.json ./
-RUN npm config set strict-ssl false && NODE_TLS_REJECT_UNAUTHORIZED=0 npm install --production && npm cache clean --force
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
+RUN npm config set strict-ssl false && npm install --production && npm cache clean --force
 
 # Copy built application
 COPY --from=builder /app/dist ./dist
